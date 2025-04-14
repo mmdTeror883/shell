@@ -1,9 +1,8 @@
 import requests
 
-# از کاربر آدرس وب‌سایت وردپرس را بپرسید
-url = input("لطفاً آدرس وب‌سایت وردپرس را وارد کنید (به عنوان مثال: http://example.com/wp-content/): ")
 
-# لیست فایل‌های مشکوک
+url = input("plese link site : http://example.com/wp-content/): ")
+
 suspicious_files = [
     'wp-config.php',
     'insert.php',
@@ -61,6 +60,6 @@ suspicious_files = [
 for file in suspicious_files:
     response = requests.get(url + file)
     if response.status_code == 200:
-        print(f'فایل پیدا شد: {url + file}')
+        print(f'scan The file was found ok: {url + file}')
     else:
-        print(f'فایل پیدا نشد: {url + file}')
+        print(f'File not found: {url + file}')
